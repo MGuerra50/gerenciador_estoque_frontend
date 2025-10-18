@@ -38,7 +38,9 @@ export default function RootLayout({
               height={30}
               priority
             />
-            <NavBar />
+            <div className="w-full">
+              <NavBar />
+            </div>
           </nav>
           <main className="w-4/5 flex rounded-xl h-[98%] justify-center items-center">
             <div className="w-[98%] bg-white rounded-xl h-full">{children}</div>
