@@ -34,6 +34,7 @@ export default function NavBar() {
                       (isActive ? "font-bold text-white " : "font-normal ") +
                       "transition-colors"
                     }
+                    style={{ fontSize: '18px'}}
                   >
                     {item.label}
                   </span>
