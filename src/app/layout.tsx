@@ -46,7 +46,7 @@ export default function RootLayout({
             </div>
           </nav>
           <main className="w-4/5 flex rounded-xl h-[98%] justify-center items-center">
-            <div className="w-[98%] bg-white rounded-xl h-full">{children}</div>
+            <div className="w-[98%] bg-gray-100 rounded-xl h-full">{children}</div>
           </main>
         </div>
       </body>
