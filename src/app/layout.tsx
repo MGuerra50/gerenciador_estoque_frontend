@@ -32,21 +32,25 @@ export default function RootLayout({
         <div className="bg-neutral-900 flex justify-center items-center h-screen w-screen">
           <nav className="w-1/5 h-full flex flex-col items-center gap-y-10">
             <section className="flex mt-[30px] items-center w-full pl-[40px]">
-              <Image
-                src={logo}
-                alt="Logo"
-                width={90}
-                height={30}
-                priority
+              <Image src={logo} alt="Logo" width={90} height={30} priority />
+              <IoMenu
+                style={{
+                  color: "white",
+                  fontSize: "35px",
+                  position: "relative",
+                  left: "45%",
+                  cursor: "pointer",
+                }}
               />
-              <IoMenu style={{color: "white", fontSize: '35px', position: 'relative', left: '45%', cursor:'pointer'}}/>
             </section>
             <div className="w-full">
               <NavBar />
             </div>
           </nav>
           <main className="w-4/5 flex rounded-xl h-[98%] justify-center items-center">
-            <div className="w-[98%] bg-gray-100 rounded-xl h-full">{children}</div>
+            <div className="w-[98%] bg-gray-100 rounded-xl h-full pl-[40px] pr-[40px] pt-[30px] pb-[30px]">
+              {children}
+            </div>
           </main>
         </div>
       </body>

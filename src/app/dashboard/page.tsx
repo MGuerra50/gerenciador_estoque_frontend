@@ -1,8 +1,12 @@
+import WidgetsBase from "../components/WidgetsBase/WidgetsBase";
+
 const Dashboard = () => {
   return (
     <>
       <div>
-        <h1>teste</h1>
+        <WidgetsBase>
+            teste
+        </WidgetsBase>
       </div>
     </>
   );
