@@ -5,6 +5,8 @@ import logo from "../../public/logo.png";
 import NavBar from "./components/NavBar/NavBar";
 import { IoMenu } from "react-icons/io5";
 import Image from "next/image";
+import ActiveWidget from "./components/ActiveWidget/ActiveWidget";
+import { menuItems } from "./config/menu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,6 +51,7 @@ export default function RootLayout({
           </nav>
           <main className="w-4/5 flex rounded-xl h-[98%] justify-center items-center">
             <div className="w-[98%] bg-gray-100 rounded-xl h-full pl-[40px] pr-[40px] pt-[30px] pb-[30px]">
+              <ActiveWidget items={menuItems}/>
               {children}
             </div>
           </main>

@@ -3,24 +3,23 @@
 import { MenuItem, menuItems } from "@/app/config/menu";
 import { menuIcons } from "@/app/config/menuIcons";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import useActiveRoute from "@/app/hooks/useActiveRoute";
 
 export default function NavBar() {
-  const pathname = usePathname() ?? "/";
+  const { isActive } = useActiveRoute(menuItems);
+
   return (
     <nav>
       <ul>
         {menuItems.map((item: MenuItem) => {
           const Icon = menuIcons[item.icon as keyof typeof menuIcons];
-          const isActive =
-            pathname === item.href ||
-            (pathname.startsWith(item.href) && pathname.endsWith("/"));
+          const active = isActive(item.href);
           return (
             <li
               key={item.href}
               className="text-white flex items-center rounded-full hover:bg-gradient-to-r from-bg-neutral-900 to-gray-700"
             >
-              {isActive && (
+              {active && (
                 <div className="absolute w-[4px] h-[58px] bg-white rounded-r-md group-hover:bg-white opacity-85 transition-all" />
               )}
               <Link
@@ -31,10 +30,10 @@ export default function NavBar() {
                   <Icon className="text-xl" />
                   <span
                     className={
-                      (isActive ? "font-bold text-white " : "font-normal ") +
+                      (active ? "font-bold text-white " : "font-normal ") +
                       "transition-colors"
                     }
-                    style={{ fontSize: '18px'}}
+                    style={{ fontSize: "18px" }}
                   >
                     {item.label}
                   </span>
