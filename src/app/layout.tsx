@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import logo from "../../public/logo.png";
 import NavBar from "./components/NavBar/NavBar";
+import { IoMenu } from "react-icons/io5";
 import Image from "next/image";
 
 const geistSans = Geist({
@@ -30,14 +31,16 @@ export default function RootLayout({
       <body>
         <div className="bg-neutral-900 flex justify-center items-center h-screen w-screen">
           <nav className="w-1/5 h-full flex flex-col items-center gap-y-10">
-            <Image
-              className="mt-[30px]"
-              src={logo}
-              alt="Logo"
-              width={90}
-              height={30}
-              priority
-            />
+            <section className="flex mt-[30px] items-center w-full pl-[40px]">
+              <Image
+                src={logo}
+                alt="Logo"
+                width={90}
+                height={30}
+                priority
+              />
+              <IoMenu style={{color: "white", fontSize: '35px', position: 'relative', left: '45%', cursor:'pointer'}}/>
+            </section>
             <div className="w-full">
               <NavBar />
             </div>
