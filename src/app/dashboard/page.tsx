@@ -4,9 +4,7 @@ const Dashboard = () => {
   return (
     <>
       <div>
-        <WidgetsBase>
-            teste
-        </WidgetsBase>
+        
       </div>
     </>
   );
