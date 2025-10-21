@@ -50,8 +50,8 @@ export default function RootLayout({
             </div>
           </nav>
           <main className="w-4/5 flex rounded-xl h-[98%] justify-center items-center">
-            <div className="w-[98%] bg-gray-100 rounded-xl h-full pl-[40px] pr-[40px] pt-[30px] pb-[30px]">
-              <ActiveWidget items={menuItems}/>
+            <div className="w-[98%] bg-gray-100 rounded-xl h-full pl-[40px] pr-[40px] pt-[30px] pb-[30px] overflow-y-auto">
+              <ActiveWidget items={menuItems} />
               {children}
             </div>
           </main>
