@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import logo from "../../public/logo.png";
 import NavBar from "./components/NavBar/NavBar";
@@ -7,16 +6,6 @@ import { IoMenu } from "react-icons/io5";
 import Image from "next/image";
 import ActiveWidget from "./components/ActiveWidget/ActiveWidget";
 import { menuItems } from "./config/menu";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
