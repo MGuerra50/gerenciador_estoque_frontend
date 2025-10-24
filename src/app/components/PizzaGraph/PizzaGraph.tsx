@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Pie, PieChart, ResponsiveContainer, Tooltip, Legend } from "recharts";
+import { Pie, PieChart, ResponsiveContainer, Tooltip, Legend, PieLabelRenderProps } from "recharts";
 
 const data01 = [
   { name: "Entradas", value: 400, fill: "#8884d8" },
@@ -25,8 +25,8 @@ const PizzaGraph = () => {
               cx="50%"
               cy="50%"
               outerRadius={80}
-              label={({ name, percent }: any) =>
-                `${name} ${((percent as number) * 100).toFixed(0)}%`
+              label={({ name, percent }:PieLabelRenderProps) =>
+                `${name} ${((Number(percent) ?? 0 ) * 100).toFixed(2)}%`
               }
             />
             <Tooltip />

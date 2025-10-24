@@ -1,6 +1,6 @@
 interface props {
   text?: string;
-  children?: any;
+  children?: React.ReactNode;
   width?: number;
   height?: number;
 }
