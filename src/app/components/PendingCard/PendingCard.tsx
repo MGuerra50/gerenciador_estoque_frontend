@@ -14,7 +14,7 @@ const PendingCard = ({ title, value, width }: props) => {
         <WidgetsBase>
           <div className="text-lg font-semibold">
             <h2 className="pl-[5px]">{title}</h2>
-            <div className="flex justify-center items-center text-[30px] mt-[30px] mb-[30px]">
+            <div className="flex justify-center items-center text-[30px] mt-[25px] mb-[25px]">
               <span className="text-[#FF2A2A]">{value}</span>
             </div>
             <div className="w-full flex justify-center mb-[10px]">
