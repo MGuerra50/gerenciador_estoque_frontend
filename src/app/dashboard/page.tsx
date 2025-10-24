@@ -1,5 +1,6 @@
 import AreaGraph from "../components/AreaGraph/AreaGraph";
 import BarGraph from "../components/BarGraph/BarGraph";
+import PendingCard from "../components/PendingCard/PendingCard";
 import PizzaGraph from "../components/PizzaGraph/PizzaGraph";
 import ValueCard from "../components/ValueCard/ValueCard";
 import WidgetsBase from "../components/WidgetsBase/WidgetsBase";
@@ -45,6 +46,9 @@ const Dashboard = () => {
             <ValueCard title="Current month's profit" valeu="R$ 7.555,32" />
           </div>
         </section>
+      </div>
+      <div>
+        <PendingCard title="Pending shipments" valeu="2"/>
       </div>
     </>
   );
