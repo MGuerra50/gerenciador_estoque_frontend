@@ -30,11 +30,12 @@ const AreaGraph = () => {
     <>
       <div className="w-[1000px]">
         <WidgetsBase>
+          <section className="h-[375px]">
           <h2 className="text-lg font-semibold mb-3 pl-[5px]">
             Inputs x Outputs
           </h2>
 
-          <ResponsiveContainer width="100%" height={350}>
+          <ResponsiveContainer width="100%" height={325}>
             <AreaChart
               data={data}
               margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
@@ -75,6 +76,7 @@ const AreaGraph = () => {
               />
             </AreaChart>
           </ResponsiveContainer>
+          </section>
         </WidgetsBase>
       </div>
     </>
