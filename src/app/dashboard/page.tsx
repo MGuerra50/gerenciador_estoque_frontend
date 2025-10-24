@@ -1,6 +1,7 @@
 import AreaGraph from "../components/AreaGraph/AreaGraph";
 import BarGraph from "../components/BarGraph/BarGraph";
 import CardValueAndGraph from "../components/CardValueAndGraph/CardValueAndGraph";
+import LowStockTable from "../components/LowStockTable/LowStockTable";
 import PendingCard from "../components/PendingCard/PendingCard";
 import PizzaGraph from "../components/PizzaGraph/PizzaGraph";
 import ValueCard from "../components/ValueCard/ValueCard";
@@ -48,9 +49,18 @@ const Dashboard = () => {
           </div>
         </section>
       </div>
-      <div>
-        <PendingCard title="Pending shipments" value="2"/>
-        <CardValueAndGraph title="Inventory value " value="R$ 100.429,01" width={400}/>
+      <div className="flex gap-[30px] w-full items-stretch">
+        <section>
+          <PendingCard title="Pending shipments" value="2" />
+          <CardValueAndGraph
+            title="Inventory value "
+            value="R$ 100.429,01"
+            width={400}
+          />
+        </section>
+        <section className="flex-1 h-full">
+          <LowStockTable height={463}/>
+        </section>
       </div>
     </>
   );

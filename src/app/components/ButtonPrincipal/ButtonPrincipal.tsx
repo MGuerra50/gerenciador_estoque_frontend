@@ -1,9 +1,15 @@
 interface props {
-  text: string;
+  text?: string;
+  children?: any;
   width?: number;
   height?: number;
 }
-export default function ButtonPrincipal({ text, width, height }: props) {
+export default function ButtonPrincipal({
+  text,
+  width,
+  height,
+  children,
+}: props) {
   return (
     <>
       <button
@@ -14,7 +20,7 @@ export default function ButtonPrincipal({ text, width, height }: props) {
         }
         className="bg-[#22C55E] rounded-lg text-white hover:cursor-pointer"
       >
-        {text}
+        {text ? text : children}
       </button>
     </>
   );
