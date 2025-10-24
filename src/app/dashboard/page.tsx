@@ -12,10 +12,10 @@ const Dashboard = () => {
         <AreaGraph />
         <section>
           <div>
-            <ValueCard title="Today’s sales" valeu="R$ 7.555,32" />
+            <ValueCard title="Today’s sales" value="R$ 7.555,32" />
           </div>
           <div className="mt-[30px]">
-            <ValueCard title="Weekly sales" valeu="R$ 7.555,32" />
+            <ValueCard title="Weekly sales" value="R$ 7.555,32" />
           </div>
         </section>
       </div>
@@ -40,15 +40,15 @@ const Dashboard = () => {
         </section>
         <section>
           <div>
-            <ValueCard title="Today’s payments" valeu="R$ 7.555,32" />
+            <ValueCard title="Today’s payments" value="R$ 7.555,32" />
           </div>
           <div className="mt-[30px]">
-            <ValueCard title="Current month's profit" valeu="R$ 7.555,32" />
+            <ValueCard title="Current month's profit" value="R$ 7.555,32" />
           </div>
         </section>
       </div>
       <div>
-        <PendingCard title="Pending shipments" valeu="2"/>
+        <PendingCard title="Pending shipments" value="2"/>
       </div>
     </>
   );
