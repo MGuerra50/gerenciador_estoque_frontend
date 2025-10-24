@@ -1,15 +1,10 @@
 interface props {
   text?: string;
-  children?: React.ReactNode;
   width?: number;
   height?: number;
+  children?: React.ReactNode;
 }
-export default function ButtonPrincipal({
-  text,
-  width,
-  height,
-  children,
-}: props) {
+export default function ButtonPrincipal({ text, width, height, children }: props) {
   return (
     <>
       <button

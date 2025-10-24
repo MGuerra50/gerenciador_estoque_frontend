@@ -38,7 +38,9 @@ export default function TablePrincipal() {
                   {product.quantity}/{product.max}
                 </td>
                 <td className=" h-[68px] px-3 py-2 text-center ">
-                  <ButtonPrincipal width={90} children={(<div className="font-semibold mt-[15px] mb-[15px]">BUY</div>)}/>
+                  <ButtonPrincipal width={90}>
+                    <div className="font-semibold mt-[15px] mb-[15px]">BUY</div>
+                  </ButtonPrincipal>
                 </td>
               </tr>
             ))}
