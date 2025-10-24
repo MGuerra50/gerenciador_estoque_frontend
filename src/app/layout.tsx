@@ -34,7 +34,7 @@ export default function RootLayout({
         <div className="bg-neutral-900 flex justify-center items-center h-screen w-screen">
           <nav className="w-1/5 h-full flex flex-col items-center gap-y-10">
             <section className="flex mt-[30px] items-center w-full pl-[40px]">
-              <Image src={logo} alt="Logo" width={90} height={30} priority />
+              <Image src={logo} alt="Logo" width={90} height={30} title="The Best And Fast System Manager" priority />
               <IoMenu
                 style={{
                   color: "white",
