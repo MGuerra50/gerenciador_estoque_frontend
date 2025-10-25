@@ -4,6 +4,7 @@ import CardValueAndGraph from "../components/CardValueAndGraph/CardValueAndGraph
 import LowStockTable from "../components/LowStockTable/LowStockTable";
 import PendingCard from "../components/PendingCard/PendingCard";
 import PizzaGraph from "../components/PizzaGraph/PizzaGraph";
+import TopSellersTable from "../components/TopSellersTable/TopSellersTable";
 import ValueCard from "../components/ValueCard/ValueCard";
 import WidgetsBase from "../components/WidgetsBase/WidgetsBase";
 
@@ -59,8 +60,11 @@ const Dashboard = () => {
           />
         </section>
         <section className="flex-1 h-full">
-          <LowStockTable height={463}/>
+          <LowStockTable height={390} />
         </section>
+      </div>
+      <div className="flex-1">
+        <TopSellersTable />
       </div>
     </>
   );
