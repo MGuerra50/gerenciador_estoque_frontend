@@ -1,4 +1,5 @@
 import Actions from "../components/Actions/Actions";
+import FilterPurchaseOrder from "../components/FilterPurchaseOrder/FilterPurchaseOrder";
 import OrderAwaitingApproval from "../components/OrderAwaitingApproval/OrderAwaitingApproval";
 import PendingCard from "../components/PendingCard/PendingCard";
 import ValueCard from "../components/ValueCard/ValueCard";
@@ -20,10 +21,13 @@ const PurchaseOrder = () => {
       </section>
       <section className="flex flex-1 gap-[30px]">
         <OrderAwaitingApproval width={960} />
-        <div style={{rowGap:"20px"}}>
+        <div style={{ rowGap: "20px" }}>
           <PendingCard title="Pending issues" value="2" />
           <Actions />
         </div>
+      </section>
+      <section>
+        <FilterPurchaseOrder />
       </section>
     </>
   );
