@@ -1,8 +1,8 @@
 "use client";
 
-import ButtonPrincipal from "../ButtonPrincipal/ButtonPrincipal";
-import TablePrincipal from "../TablePrincipal/TablePrincipal";
-import WidgetsBase from "../WidgetsBase/WidgetsBase";
+import ButtonPrincipal from "../../../../shared/components/ButtonPrincipal/ButtonPrincipal";
+import TablePrincipal from "../../../../shared/components/TablePrincipal/TablePrincipal";
+import WidgetsBase from "../../../../shared/components/WidgetsBase/WidgetsBase";
 
 interface props {
   height?: number;

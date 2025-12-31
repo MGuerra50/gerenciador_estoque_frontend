@@ -1,5 +1,5 @@
 import LineGraph from "../LineGraph/LineGraph";
-import WidgetsBase from "../WidgetsBase/WidgetsBase";
+import WidgetsBase from "../../../../shared/components/WidgetsBase/WidgetsBase";
 
 interface props {
   title: string;

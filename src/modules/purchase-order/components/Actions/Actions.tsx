@@ -1,5 +1,5 @@
-import ButtonPrincipal from "../ButtonPrincipal/ButtonPrincipal";
-import WidgetsBase from "../WidgetsBase/WidgetsBase";
+import ButtonPrincipal from "../../../../shared/components/ButtonPrincipal/ButtonPrincipal";
+import WidgetsBase from "../../../../shared/components/WidgetsBase/WidgetsBase";
 import { MdOutlineCheckBox } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
 import { IoMdSearch } from "react-icons/io";

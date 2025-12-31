@@ -1,12 +1,12 @@
-import AreaGraph from "../components/AreaGraph/AreaGraph";
-import BarGraph from "../components/BarGraph/BarGraph";
-import CardValueAndGraph from "../components/CardValueAndGraph/CardValueAndGraph";
-import LowStockTable from "../components/LowStockTable/LowStockTable";
-import PendingCard from "../components/PendingCard/PendingCard";
-import PizzaGraph from "../components/PizzaGraph/PizzaGraph";
-import TopSellersTable from "../components/TopSellersTable/TopSellersTable";
-import ValueCard from "../components/ValueCard/ValueCard";
-import WidgetsBase from "../components/WidgetsBase/WidgetsBase";
+import AreaGraph from "../../modules/dashboard/components/AreaGraph/AreaGraph";
+import BarGraph from "../../modules/dashboard/components/BarGraph/BarGraph";
+import CardValueAndGraph from "../../modules/dashboard/components/CardValueAndGraph/CardValueAndGraph";
+import LowStockTable from "../../modules/dashboard/components/LowStockTable/LowStockTable";
+import PendingCard from "../../shared/components/PendingCard/PendingCard";
+import PizzaGraph from "../../modules/dashboard/components/PizzaGraph/PizzaGraph";
+import TopSellersTable from "../../modules/dashboard/components/TopSellersTable/TopSellersTable";
+import ValueCard from "../../shared/components/ValueCard/ValueCard";
+import WidgetsBase from "../../shared/components/WidgetsBase/WidgetsBase";
 
 const Dashboard = () => {
   return (

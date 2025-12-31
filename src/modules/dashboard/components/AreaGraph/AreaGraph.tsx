@@ -8,7 +8,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
-import WidgetsBase from "../WidgetsBase/WidgetsBase";
+import WidgetsBase from "../../../../shared/components/WidgetsBase/WidgetsBase";
 
 const data = [
   { month: "Jan", inputs: 500, outputs: 400 },

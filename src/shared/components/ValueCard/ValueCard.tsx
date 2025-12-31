@@ -1,3 +1,4 @@
+import React from "react";
 import WidgetsBase from "../WidgetsBase/WidgetsBase";
 
 interface props {

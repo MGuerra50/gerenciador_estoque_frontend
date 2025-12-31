@@ -1,7 +1,7 @@
-import Actions from "../components/Actions/Actions";
-import OrderAwaitingApproval from "../components/OrderAwaitingApproval/OrderAwaitingApproval";
-import PendingCard from "../components/PendingCard/PendingCard";
-import ValueCard from "../components/ValueCard/ValueCard";
+import Actions from "../../modules/purchase-order/components/Actions/Actions";
+import OrderAwaitingApproval from "../../modules/purchase-order/components/OrderAwaitingApproval/OrderAwaitingApproval";
+import PendingCard from "../../shared/components/PendingCard/PendingCard";
+import ValueCard from "../../shared/components/ValueCard/ValueCard";
 
 const PurchaseOrder = () => {
   return (

@@ -2,7 +2,7 @@
 
 import { MenuItem } from "@/app/config/menu";
 import useActiveRoute from "@/app/hooks/useActiveRoute";
-import WidgetsBase from "../WidgetsBase/WidgetsBase";
+import WidgetsBase from "../../../shared/components/WidgetsBase/WidgetsBase";
 import { LuNewspaper } from "react-icons/lu";
 import { IoNotificationsOutline } from "react-icons/io5";
 
