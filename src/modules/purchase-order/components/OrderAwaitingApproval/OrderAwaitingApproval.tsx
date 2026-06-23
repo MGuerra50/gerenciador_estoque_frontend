@@ -3,61 +3,60 @@
 import ButtonPrincipal from "../../../../shared/components/ButtonPrincipal/ButtonPrincipal";
 import TablePrincipal from "../../../../shared/components/TablePrincipal/TablePrincipal";
 import WidgetsBase from "../../../../shared/components/WidgetsBase/WidgetsBase";
+import WidgetHeader from "../../../../shared/components/WidgetHeader/WidgetHeader";
+import LoadingState from "../../../../shared/components/LoadingState/LoadingState";
+import { formatCurrency } from "../../utils/formatCurrency";
+import type { AwaitingApprovalOrder } from "../../types/purchaseOrder";
 
-interface Order {
+interface OrderRow {
+  id: number;
   orderCode: number;
   netValue: string;
   dateOfIssue: string;
 }
 
-const order: Order[] = [
-  { orderCode: 10, netValue: "R$ 500.431", dateOfIssue: "10/09" },
-  { orderCode: 9, netValue: "R$ 129.743,90", dateOfIssue: "28/07" },
-  { orderCode: 8, netValue: "R$ 57.001,22", dateOfIssue: "15/07" },
-  { orderCode: 7, netValue: "R$ 535.998,01", dateOfIssue: "15/06" },
-];
-
 const orderColumns = [
-  { key: "orderCode", label: "Order code" },
-  { key: "netValue", label: "Net values" },
-  { key: "dateOfIssue", label: "Date of issue" },
-] satisfies { key: keyof Order; label: string }[];
+  { key: "orderCode" as const, label: "Order code" },
+  { key: "netValue" as const, label: "Net values" },
+  { key: "dateOfIssue" as const, label: "Date of issue" },
+] satisfies { key: keyof OrderRow; label: string }[];
 
-interface props {
-  width?: number;
-  height?: number;
+interface Props {
+  orders: AwaitingApprovalOrder[];
+  loading?: boolean;
+  onViewOrder: (id: number) => void;
 }
 
-export default function OrderAwaitingApproval({ width, height }: props) {
+export default function OrderAwaitingApproval({ orders, loading, onViewOrder }: Props) {
+  const rows: OrderRow[] = orders.map((o) => ({
+    id: o.id,
+    orderCode: o.orderCode,
+    netValue: formatCurrency(o.netValue),
+    dateOfIssue: o.dateOfIssue,
+  }));
+
   return (
-    <>
-      <div>
-        <WidgetsBase>
-          <div
-            style={
-              width
-                ? { width: width + "px", height: height + "px" }
-                : { width: "500px", height: "493px" }
-            }
-          >
-            <h2 className="text-lg font-semibold mb-3 pl-[5px]">
-              Order Awaiting Approval
-            </h2>
-            <TablePrincipal
-              rows={order}
-              columns={orderColumns}
-              renderActions={(order) => (
-                <ButtonPrincipal width={120}>
-                  <div className="font-semibold mt-[15px] mb-[15px]">View order</div>
-                </ButtonPrincipal>
-              )}
-            />
-            <div className="w-full h-full flex justify-center mb-[10px] mt-[25px] text-lg font-semibold">
-              <ButtonPrincipal text="See more" />
-            </div>
-          </div>
-        </WidgetsBase>
+    <WidgetsBase>
+      <div className="w-full">
+        <WidgetHeader title="Orders awaiting approval" />
+        {loading ? (
+          <LoadingState />
+        ) : (
+          <TablePrincipal
+            rows={rows}
+            columns={orderColumns}
+            keyExtractor={(row) => row.id}
+            renderActions={(row) => (
+              <ButtonPrincipal width={120} onClick={() => onViewOrder(row.id)}>
+                <div className="font-semibold mt-[15px] mb-[15px]">View order</div>
+              </ButtonPrincipal>
+            )}
+          />
+        )}
+        <div className="w-full flex justify-center mb-[10px] mt-[25px] text-lg font-semibold">
+          <ButtonPrincipal text="See more" />
+        </div>
       </div>
-    </>
+    </WidgetsBase>
   );
 }

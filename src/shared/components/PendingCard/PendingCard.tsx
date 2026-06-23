@@ -5,25 +5,24 @@ interface props {
   title: string;
   value: string;
   width?: number;
+  onSeeMore?: () => void;
 }
 
-const PendingCard = ({ title, value, width }: props) => {
+const PendingCard = ({ title, value, width, onSeeMore }: props) => {
   return (
-    <>
-      <div style={width ? { width: width + "px" } : { width: "400px" }}>
-        <WidgetsBase>
-          <div className="text-lg font-semibold">
-            <h2 className="pl-[5px]">{title}</h2>
-            <div className="flex justify-center items-center text-[30px] mt-[25px] mb-[25px]">
-              <span className="text-[#FF2A2A]">{value}</span>
-            </div>
-            <div className="w-full flex justify-center mb-[10px]">
-              <ButtonPrincipal text="See more" />
-            </div>
+    <div style={width ? { width: width + "px" } : { width: "400px" }}>
+      <WidgetsBase>
+        <div className="text-lg font-semibold">
+          <h2 className="pl-[5px]">{title}</h2>
+          <div className="flex justify-center items-center text-[30px] mt-[25px] mb-[25px]">
+            <span className="text-[#FF2A2A]">{value}</span>
           </div>
-        </WidgetsBase>
-      </div>
-    </>
+          <div className="w-full flex justify-center mb-[10px]">
+            <ButtonPrincipal text="See more" onClick={onSeeMore} />
+          </div>
+        </div>
+      </WidgetsBase>
+    </div>
   );
 };
 

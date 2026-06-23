@@ -2,13 +2,18 @@
 
 import { MenuItem } from "@/app/config/menu";
 import useActiveRoute from "@/app/hooks/useActiveRoute";
+import { usePageTitle } from "@/app/context/PageTitleContext";
 import WidgetsBase from "../../../shared/components/WidgetsBase/WidgetsBase";
 import { LuNewspaper } from "react-icons/lu";
 import { IoNotificationsOutline } from "react-icons/io5";
 
 export default function ActiveWidget({ items }: { items: MenuItem[] }) {
   const { activeItem } = useActiveRoute(items);
+  const { title: pageTitle } = usePageTitle();
+
   if (!activeItem) return null;
+
+  const displayTitle = pageTitle ?? activeItem.label;
 
   return (
     <WidgetsBase>
@@ -16,14 +21,17 @@ export default function ActiveWidget({ items }: { items: MenuItem[] }) {
         style={{
           display: "grid",
           gridTemplateColumns: "83% 1fr 1fr 1fr",
-          alignItems: 'center'
+          alignItems: "center",
         }}
       >
-        <span className="font-bold text-[26px]">{activeItem.label}</span>
+        <span className="font-bold text-[26px]">{displayTitle}</span>
 
         <LuNewspaper className="cursor-pointer" style={{ fontSize: "25px" }} />
         <IoNotificationsOutline className="cursor-pointer" style={{ fontSize: "25px" }} />
-        <div style={{display:'inline-grid', justifyContent: 'center'}} className="cursor-pointer rounded-full border-2 border-solid h-[39px] w-[39px] bg-gray-400">
+        <div
+          style={{ display: "inline-grid", justifyContent: "center" }}
+          className="cursor-pointer rounded-full border-2 border-solid h-[39px] w-[39px] bg-gray-400"
+        >
           <span className="w-full flex items-center select-none">M</span>
         </div>
       </div>

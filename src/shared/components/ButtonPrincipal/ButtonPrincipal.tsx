@@ -3,20 +3,42 @@ interface props {
   width?: number;
   height?: number;
   children?: React.ReactNode;
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: "button" | "submit" | "reset";
+  variant?: "primary" | "secondary" | "danger" | "warning";
 }
-export default function ButtonPrincipal({ text, width, height, children }: props) {
+
+const variantClasses: Record<string, string> = {
+  primary: "bg-[#22C55E] hover:bg-[#16A34A]",
+  secondary: "bg-gray-400 hover:bg-gray-500",
+  danger: "bg-[#EF4444] hover:bg-[#DC2626]",
+  warning: "bg-[#F97316] hover:bg-[#EA580C]",
+};
+
+export default function ButtonPrincipal({
+  text,
+  width,
+  height,
+  children,
+  onClick,
+  disabled,
+  type = "button",
+  variant = "primary",
+}: props) {
   return (
-    <>
-      <button
-        style={
-          width || height
-            ? { width: width + "px", height: height + "px" }
-            : { width: "200px" }
-        }
-        className="bg-[#22C55E] rounded-lg text-white hover:cursor-pointer"
-      >
-        {text ? text : children}
-      </button>
-    </>
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      style={
+        width || height
+          ? { width: width ? width + "px" : undefined, height: height ? height + "px" : undefined }
+          : { width: "200px" }
+      }
+      className={`${variantClasses[variant]} rounded-lg text-white hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-colors`}
+    >
+      {text ? text : children}
+    </button>
   );
 }
